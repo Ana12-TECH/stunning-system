@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Caryl Legada</title>
+
+<style>
+/* ===== COLOR PALETTE (Earthy Neutral) ===== */
+:root {
+    --primary:#A3B18A;     /* Sage Green */
+    --secondary:#EBDCCB;   /* Sand Beige */
+    --accent:#5F6F52;      /* Olive */
+    --bg:#F7F4EF;          /* Warm Cream */
+    --card-bg: rgba(255,255,255,0.75);
+    --text:#4B453A;        /* Earthy Brown */
+}
+
+/* ===== GLOBAL ===== */
+body {
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* ===== HEADER ===== */
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:var(--card-bg);
+    border-radius:0 0 20px 20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+header h2 {
+    font-weight:600;
+    font-size:24px;
+}
+
+header h2 span {
+    color: var(--primary);
+}
+
+nav a {
+    margin-left:20px;
+    text-decoration:none;
+    color:var(--text);
+    font-weight:600;
+    font-size:18px;
+    transition:0.3s;
+}
+
+nav a:hover {
+    color:var(--primary);
+}
+
+/* ===== CONTACT LINKS ===== */
+.contact-container {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin-top:100px;
+    padding:20px;
+    text-align:center;
+}
+
+.contact-container h1 {
+    font-size:60px;
+    color:var(--primary);
+    margin-bottom:50px;
+}
+
+.contact-links {
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.contact-links a {
+    display:inline-block;
+    padding:20px 40px;
+    border-radius:12px;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    font-size:22px;
+    transition:0.3s;
+}
+
+.contact-links a:hover {
+    background:var(--accent);
+    color:#fff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    .contact-container h1{
+        font-size:48px;
+    }
+    .contact-links a{
+        font-size:20px;
+        padding:16px 30px;
+    }
+    header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    nav{
+        margin-top:10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h2>Caryl <span>Legada</span></h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="contact-container">
+    <h1>Contact Me</h1>
+    <div class="contact-links">
+        <a href="https://www.facebook.com/janinekate.legada" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/audxzi?igsh=NzJrNWJ3eGZzMmlz" target="_blank">Instagram</a>
+        <a href="mailto:caryllegada24@gmail.com">Gmail</a>
+    </div>
+</div>
+
+</body>
+</html>
+

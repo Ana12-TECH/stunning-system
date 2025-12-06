@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caryl Legada | Home</title>
+
+<style>
+/* ===== COLOR PALETTE (Earthy Neutral) ===== */
+:root {
+    --primary: #A3B18A;     /* Sage Green */
+    --secondary: #EBDCCB;   /* Sand Beige */
+    --accent: #5F6F52;      /* Olive */
+    --bg: #F7F4EF;          /* Warm Cream */
+    --card-bg: rgba(255,255,255,0.75);
+    --text: #4B453A;        /* Earthy Brown */
+}
+
+/* ===== GLOBAL ===== */
+body {
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* ===== HEADER ===== */
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:var(--card-bg);
+    border-radius:0 0 20px 20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.06);
+    position:sticky;
+    top:0;
+    backdrop-filter:blur(10px);
+    z-index: 10;
+}
+
+header h2 span {
+    color: var(--primary);
+}
+
+nav a {
+    margin-left:20px;
+    text-decoration:none;
+    color:var(--text);
+    font-weight:700;
+    font-size:18px;
+    transition:0.3s;
+}
+
+nav a:hover {
+    color:var(--primary);
+}
+
+/* ===== HERO ===== */
+.hero {
+    padding: 100px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero .text-box {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 70px;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--accent); 
+}
+
+/* TYPING SEPARATE LINE */
+.typing-container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+#typing {
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--primary);
+    border-right: 3px solid var(--primary);
+    padding-right: 5px;
+
+    height: 1em;
+    line-height: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.hero p {
+    font-size: 22px;
+    margin-top: 20px;
+    color:#5f564a;
+    line-height: 1.8;
+}
+
+.hero .btn {
+    margin-top: 40px;
+    padding: 18px 40px;
+    background: var(--primary);
+    color: white;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 22px;
+    transition: 0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hero .btn:hover {
+    background: var(--accent);
+    color:#fff;
+}
+
+/* ===== IMAGE BOX ===== */
+.image-box {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    backdrop-filter:blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-box img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 30px;
+    }
+
+    .image-box img {
+        width: 80%;
+        max-width: 250px;
+    }
+
+    .hero h1 {
+        font-size: 60px; 
+    }
+
+    #typing {
+        font-size: 55px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    .hero .btn {
+        font-size: 20px;
+        padding: 16px 35px;
+    }
+}
+
+@media(max-width: 480px) {
+    .hero h1 {
+        font-size: 48px; 
+    }
+
+    #typing {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero .btn {
+        font-size: 18px;
+        padding: 14px 30px;
+    }
+
+    .image-box img {
+        width: 90%;
+        max-width: 220px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h2>Caryl <span>Legada</span></h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="text-box">
+        <h1>Hello, I'm</h1>
+
+        <!-- TYPING TEXT -->
+        <div class="typing-container">
+            <span id="typing"></span>
+        </div>
+
+        <p>I’m a Visual Designer and Graphic Designer with Front-End Development skills, crafting modern, aesthetic, and user-focused digital designs.</p>
+
+        <a href="works.html" class="btn">View My Works</a>
+    </div>
+
+    <div class="image-box">
+        <img src="image/1-removebg-preview.png" alt="Me">
+    </div>
+</section>
+
+<script>
+/* ===== TYPING SCRIPT ===== */
+const text = "Caryl";
+let index = 0;
+let isDeleting = false;
+
+function type() {
+    const typing = document.getElementById("typing");
+
+    if (!isDeleting) {
+        typing.textContent = text.substring(0, index++);
+        if (index > text.length) {
+            isDeleting = true;
+            setTimeout(type, 900);
+            return;
+        }
+    } else {
+        typing.textContent = text.substring(0, index--);
+        if (index < 0) {
+            isDeleting = false;
+            index = 0;
+        }
+    }
+
+    setTimeout(type, isDeleting ? 80 : 120);
+}
+
+type();
+</script>
+
+</body>
+</html>

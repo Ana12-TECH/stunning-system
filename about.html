@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Harven Lacupa</title>
+<style>
+/* ===== COLOR PALETTE (Earthy Neutral) ===== */
+:root{
+    --primary:#A3B18A;    /* Sage Green */
+    --bg:#F7F4EF;         /* Warm Cream */
+    --card-bg:rgba(255,255,255,0.75);
+    --text:#4B453A;       /* Earthy Brown */
+    --skill-bg:#D8D3C7;   /* Soft neutral for skill bar background */
+}
+
+/* ===== GLOBAL ===== */
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* ===== HEADER ===== */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:var(--card-bg);
+    border-radius:0 0 20px 20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+header h2 span{color:var(--primary);}
+nav a{
+    margin-left:20px;
+    text-decoration:none;
+    color:var(--text);
+    font-weight:600;
+    font-size:18px;
+    transition:0.3s;
+}
+nav a:hover{color:var(--primary);}
+
+/* ===== SECTION ===== */
+.section{
+    max-width:900px;
+    margin:60px auto;
+    padding:0 20px;
+    text-align: justify;
+}
+
+.section h1{
+    font-size:50px;
+    color:var(--primary);
+    margin-bottom:25px;
+}
+
+.section p{
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:18px;
+}
+
+/* ===== SKILLS ===== */
+.skills{
+    margin-top:40px;
+}
+
+.skills h2{
+    font-size:35px;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.skills div{
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.skill-bar{
+    margin:15px 0;
+    background:var(--skill-bg);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.skill-fill{
+    height:20px;
+    width:0%;
+    background:var(--primary);
+    border-radius:10px;
+    transition:1s;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    nav{
+        margin-top:10px;
+    }
+    .section h1{
+        font-size:40px;
+    }
+    .section p{
+        font-size:18px;
+    }
+    .skills h2{
+        font-size:28px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h2>Caryl <span> Legada</span></h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="section">
+    <h1>About Me</h1>
+    <p>Hello! I’m Kristine Joy, a Visual and Graphic Designer with a passion for crafting modern visuals and functional interfaces.</p>
+    <p>I produce bold, clear, and meaningful designs that elevate brands and enhance how users connect with digital content.</p>
+
+    <div class="skills">
+        <h2>Skills</h2>
+        <div>Graphic Design</div>
+        <div class="skill-bar"><div class="skill-fill" data-percent="90%"></div></div>
+
+        <div>UI/UX Design</div>
+        <div class="skill-bar"><div class="skill-fill" data-percent="90%"></div></div>
+
+        <div>HTML/CSS/JS</div>
+        <div class="skill-bar"><div class="skill-fill" data-percent="88%"></div></div>
+    </div>
+</section>
+
+<script>
+/* Animate skill bars */
+window.addEventListener('DOMContentLoaded', () => {
+    const skillFills = document.querySelectorAll('.skill-fill');
+    skillFills.forEach(fill => {
+        const percent = fill.getAttribute('data-percent');
+        setTimeout(() => {
+            fill.style.width = percent;
+        }, 300);
+    });
+});
+</script>
+
+</body>
+</html>
